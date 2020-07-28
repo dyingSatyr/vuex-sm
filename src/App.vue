@@ -2,7 +2,6 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <Header msg="Header" />
-    <p>yo yo</p>
     <router-view></router-view>
   </div>
 </template>

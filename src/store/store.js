@@ -8,19 +8,29 @@ export default new Vuex.Store({
     counter: 5,
   },
   mutations: {
-    setCounter(n) {
-      this.state.counter = n;
+    setCounter(state, n) {
+      state.counter = n;
     },
-    incrementCounter() {
-      this.state.counter++;
+    incrementCounter(state) {
+      state.counter++;
     },
-    decrementCounter() {
-      this.state.counter--;
+    decrementCounter(state) {
+      state.counter--;
     },
   },
-  actions: {},
+  actions: {
+    incrementCounter(context) {
+      context.commit("incrementCounter");
+    },
+    decrementCounter(context) {
+      context.commit("decrementCounter");
+    },
+    setCounter(context, val) {
+      context.commit("setCounter", val);
+    },
+  },
   modules: {},
   getters: {
-    getCounter: () => this.state.counter,
+    getCounter: (state) => state.counter,
   },
 });
